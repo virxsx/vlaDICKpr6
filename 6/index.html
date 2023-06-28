@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Відправити email</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="email"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        input[type="text"] {
+            border-radius: 5px;
+            border:none;
+            box-shadow:  1px 1px 5px rgba(0,0,0,0.2);
+            width:300px;
+            height: 100px;
+            margin-top:15px;
+            margin-bottom:10px;
+        }
+
+        textarea {
+            border-radius: 5px;
+            border:none;
+            box-shadow:  1px 1px 5px rgba(0,0,0,0.2);
+            width:300px;
+            height: 100px;
+            margin-top:15px;
+            margin-bottom:10px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="mailto:example@example.com">
+        <label for="email">Адреса e-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Тема повідомлення:</label>
+        <input type="text" id="subject" name="subject">
+
+        <label for="message">Повідомлення:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Надіслати</button>
+    </form>
+</body>
+</html>

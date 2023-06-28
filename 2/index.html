@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тестування</title>
+</head>
+<body>
+  <h2>Тестування знань таблиці істинності логічного елемента</h2>
+  
+  
+  <script>
+    // створюємо двовимірний масив з даними
+var data = [
+  ["x2", "x1", "y"],
+  [0, 0, 0],
+  [0, 1, 1],
+  [1, 0, 1],
+  [1, 1, 1]
+];
+
+// створюємо елемент таблиці
+var table = document.createElement("table");
+
+// заповнюємо таблицю за допомогою циклів
+for (var i = 0; i < data.length; i++) {
+  var row = document.createElement("tr");
+  for (var j = 0; j < data[i].length; j++) {
+    var cell = document.createElement("td");
+    cell.textContent = data[i][j];
+    row.appendChild(cell);
+  }
+  table.appendChild(row);
+}
+
+// вставляємо таблицю у документ
+document.body.appendChild(table);
+
+    function checkAnswer() {
+      const correctAnswer =  true; // Ваш логічний елемент
+      const userAnswer = document.getElementById("answer").value;
+
+      if (userAnswer === "") {
+        alert("Ви не вибрали жодної відповіді!");
+      } else if (userAnswer === String(correctAnswer)) {
+        alert("Вітаємо! Ваша відповідь є правильною.");
+      } else {
+        alert(`На жаль, ваша відповідь є неправильною.`);
+      }
+    }
+  </script>
+
+<p>Оберіть правильну відповідь:</p>
+<select id="answer">
+  <option value="false">-- Виберіть відповідь --</option>
+  <option value="false">Елемент І(кон'юкція)</option>
+  <option value="true">Елемент АБО(диз'юкція)</option>
+  <option value="false">Елемент ВИКЛЮЧАЮЧЕ АБО(нерівнозначність)</option>
+  <option value="false">Елемент АБО-НЕ (стрілка Пірса)</option>
+  <option value="false">Елемент І-НЕ(штриф Шеффера)</option>
+  <option value="false">Елемент ВИКЛЮЧАЮЧЕ АБО-НЕ(рівнозначність)</option>
+</select>
+
+<button onMouseOver="checkAnswer()">Перевірити</button>
+
+</body>
+</html>
